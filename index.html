@@ -21,8 +21,11 @@
         </div>
 
         <div class="header__content header__content--odd header__content--borderleft">
-            <div class="header__notif">
-                <img class="header__img header__img--radius " src="docs/docs/assets/avatar.jpg" alt="Avatar_user">
+            <button type="button" class="header__notif">
+                <img class="header__img header__img--radius" src="docs/docs/assets/avatar.jpg" alt="Avatar_user">
+            </button>
+            <div class="header__popup header__popup--hidden">
+                Vous avez trois nouveaux messages
             </div>
             Marie Thompson
         </div>
@@ -59,6 +62,12 @@
             </card>
         </main>
     </div>
+    <script>
+            document.querySelector('.header__notif').addEventListener('click', function () {
+                document.querySelector('.header__popup').classList.toggle('header__popup--hidden')
+            });
+        </script>
+
 </body>
 
 </html>

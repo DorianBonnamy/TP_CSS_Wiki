@@ -20,6 +20,7 @@ body {
 .header__content{
     padding:20px 40px;
     flex:auto;
+    position:relative;
 }
 
 .header__content--odd{
@@ -35,7 +36,7 @@ body {
 .header__img{    
     width:50px;
     height: auto;    
-    margin-right: 16px;
+    margin-right: 0;
     vertical-align: middle; 
 }
 
@@ -45,6 +46,11 @@ body {
 
 .header__notif {
     position: relative;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    margin-right: 16px;
+    cursor: pointer;
 }
 
 .header__notif::after { 
@@ -62,6 +68,24 @@ body {
     color:white;
 }
 
+.header__popup {
+    position: absolute;
+    background: white;
+    border: 1px solid #eee;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 20px;
+}
+
+.header__popup--hidden {
+    display: none;
+}
+
+.header__popup img{
+    width:50px;
+    height:auto;
+}
 /*Block container*/
 
 .container{
@@ -127,4 +151,29 @@ body {
 .card_subtitle{
     margin-top:8px;
     color:#B4B4B4;  
+}
+
+
+@Media (max-width:600px){
+
+    .header{
+        flex-direction: column-reverse;
+    }
+
+    .header__content, .card{
+        padding: 20px;
+        
+    }
+
+    .header__content, .card__text{
+        text-align:center;
+    }
+
+    .card{
+        flex-direction: column;
+    }
+
+    .card__img{
+        margin-bottom:20px;
+    }
 }
